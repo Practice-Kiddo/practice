@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.example.demo.entity.Employee;
 import com.example.demo.exceptionhandle.BadRequestException;
@@ -28,6 +29,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/employee")
 @Api(value="EmployeeApplication")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EmployeeController {
 	
     private static final Logger log = Logger.getLogger(EmployeeController.class.getName());
