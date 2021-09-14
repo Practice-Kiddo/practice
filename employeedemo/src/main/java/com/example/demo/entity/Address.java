@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "Address")
@@ -19,21 +19,21 @@ public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@ApiModelProperty(notes = " Employee Address ID")
+	//@ApiModelProperty(notes = " Employee Address ID")
 	private int id;
 	
-	@ApiModelProperty(notes = " Employee Address Street")
+	//@ApiModelProperty(notes = " Employee Address Street")
 	@Size(min = 2)
 	private String street;
 	
-	@ApiModelProperty(notes = " Employee Address Type")
+	//@ApiModelProperty(notes = " Employee Address Type")
 	private String type;
 	
-	@ApiModelProperty(notes = " Employee Address City")
+	//@ApiModelProperty(notes = " Employee Address City")
 	@Column(name = "city", nullable = false)
 	private String city;
 	
-	@ApiModelProperty(notes = " Employee Address ZipCode")
+	//@ApiModelProperty(notes = " Employee Address ZipCode")
 	@Column(name = "zipcode", nullable = false, length = 6)
 	private int zipcode;
 	

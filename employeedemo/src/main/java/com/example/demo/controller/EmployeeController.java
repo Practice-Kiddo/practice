@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -23,12 +21,12 @@ import com.example.demo.entity.Employee;
 import com.example.demo.exceptionhandle.BadRequestException;
 import com.example.demo.service.EmployeeService;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/employee")
-@Api(value="EmployeeApplication")
+//@Api(value="EmployeeApplication")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EmployeeController {
 	
@@ -39,7 +37,7 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@GetMapping("/employees")
-    @ApiOperation(value = "View list of employees")
+   // @ApiOperation(value = "View list of employees")
 	public ResponseEntity<?> getEmployees()
 	{
 		
@@ -56,7 +54,7 @@ public class EmployeeController {
 	}
 	
 	@PostMapping(name = "/saveEmployee",produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ApiOperation(value = "save the employee", response = Employee.class)
+    //@ApiOperation(value = "save the employee", response = Employee.class)
 	public ResponseEntity<?> saveEmployee( @RequestBody Employee emp)
 	{
 		try {
@@ -78,7 +76,7 @@ public class EmployeeController {
 	}
 	
 	@GetMapping("/employee")
-    @ApiOperation(value = "View an employee", response = Employee.class)
+    //@ApiOperation(value = "View an employee", response = Employee.class)
 	public ResponseEntity<?> getEmployee( @RequestParam("id") int id)
 	{
 		
@@ -99,7 +97,7 @@ public class EmployeeController {
 	}
 	
 	@DeleteMapping("/delete")
-	@ApiOperation(value = "Delete an employee")
+	//@ApiOperation(value = "Delete an employee")
 	public ResponseEntity<String> deleteEmployee(@RequestParam("id") int id)
 	{
 		try {
@@ -115,7 +113,7 @@ public class EmployeeController {
 		}
 	}
 	@PutMapping("/update")
-	@ApiOperation(value = "Update an employee")
+	//@ApiOperation(value = "Update an employee")
 	public ResponseEntity<?> updateEmployee(@RequestParam("id") int id, @RequestBody Employee emp )
 	{
 		try {

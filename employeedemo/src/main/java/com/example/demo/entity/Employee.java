@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import io.swagger.annotations.ApiModelProperty;
+//import io.swagger.annotations.ApiModelProperty;
 
 @Entity
 @Table(name = "Employee")
@@ -24,24 +24,24 @@ public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	// try GenerationType.SEQUENCE
-	@ApiModelProperty(notes = " Employee ID")
+	//@ApiModelProperty(notes = " Employee ID")
 	@Column(name = "ID")
 	private int employeeId;
 	
 	@Column(name = "EmployeeName", nullable = false )
-	@ApiModelProperty(notes = " Employee Name")
+	//@ApiModelProperty(notes = " Employee Name")
 	@Size(min = 2)
 	private String name;
 	
 	@Column(name = "EmployeeSalary")
-	@ApiModelProperty(notes = " Employee Salary")
+	//@ApiModelProperty(notes = " Employee Salary")
 	private double salary;
 	
 	@Column(name = "EmployeePhno", length = 10)
-	@ApiModelProperty(notes = " Employee Phone Number")
+	//@ApiModelProperty(notes = " Employee Phone Number")
 	private long phno;
 	
-	@ApiModelProperty(notes = " Employee Address")
+	//@ApiModelProperty(notes = " Employee Address")
 	@OneToMany(cascade= {CascadeType.PERSIST, CascadeType.REFRESH, CascadeType.MERGE})
     @JoinColumn(name="EMPLOYEE_ID")
 	@JsonManagedReference

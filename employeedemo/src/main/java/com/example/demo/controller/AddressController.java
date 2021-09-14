@@ -20,12 +20,12 @@ import com.example.demo.entity.Address;
 import com.example.demo.exceptionhandle.BadRequestException;
 import com.example.demo.service.AddressService;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
+//import io.swagger.annotations.Api;
+//import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/address")
-@Api(value="Address Controller")
+//@Api(value="Address Controller")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AddressController {
 	
@@ -36,7 +36,7 @@ public class AddressController {
 		AddressService addressService;
 		
 		@GetMapping("/addresses")
-	    @ApiOperation(value = "View list of addresses")
+	   // @ApiOperation(value = "View list of addresses")
 		public ResponseEntity<?> getAddresses()
 		{
 			
@@ -53,7 +53,7 @@ public class AddressController {
 		}
 		
 		@GetMapping("/address")
-	    @ApiOperation(value = "View addresse")
+	   // @ApiOperation(value = "View addresse")
 		public ResponseEntity<?> getAddress(@RequestParam("id") int id)
 		{
 			
@@ -77,7 +77,7 @@ public class AddressController {
 
 
 		@PostMapping(name = "/saveAddress",produces = {MediaType.APPLICATION_JSON_VALUE})
-	    @ApiOperation(value = "save the employee", response = Address.class)
+	    //@ApiOperation(value = "save the employee", response = Address.class)
 		public ResponseEntity<?> saveAddress(@RequestBody Address adr)
 		{
 			try {
@@ -94,7 +94,7 @@ public class AddressController {
 		}
 		
 		@DeleteMapping("/address")
-	    @ApiOperation(value = "Delete addresse")
+	    //@ApiOperation(value = "Delete addresse")
 		public ResponseEntity<?> deleteAddress(@RequestParam("id") int id)
 		{
 			
@@ -109,6 +109,4 @@ public class AddressController {
 					return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
 				}
 		}
-
-
 }
