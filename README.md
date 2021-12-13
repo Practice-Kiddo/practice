@@ -1,3 +1,0 @@
-# practice
-practiced RESTApi's
--------------------
